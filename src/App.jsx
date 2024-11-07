@@ -63,12 +63,17 @@ function App() {
     // Handle case when first input is a number or minus
     if (
       displayValue === "0" &&
-      (numbers.includes(value) || value === "-") &&
+      (numbers.includes(value) || value === "-" || value === "(") &&
       previousExpression === ""
     ) {
       setExpression(value);
       setDisplayValue(value);
       setCurrentNumber(value);
+      return;
+    }
+
+    // Handle case when first input is a closing bracket
+    if (displayValue === "0" && previousExpression === "" && value === ")") {
       return;
     }
 

@@ -31,7 +31,7 @@ body {
 
 .display-container {
   width: 100%;
-  padding-right: 0.6rem;
+  padding: 0 0.6rem;
   text-align: right;
   color: #e5e5e5;
   border: 0.1rem solid #9c9c9c;
@@ -42,7 +42,7 @@ body {
   height: 6rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .display-history {
@@ -50,6 +50,7 @@ body {
   text-align: right;
   flex-grow: 1;
   font-weight: 200;
+  line-height: 1;
   color: #e5e5e580;
 }
 
@@ -57,13 +58,12 @@ body {
   text-align: right;
   align-self: flex-end;
   font-size: 3.2rem;
-  padding-bottom: 0;
-  padding: 0;
   margin: 0;
-  line-height: 3rem;
   width: 98%;
+  line-height: 1.2;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   overflow: hidden; /* hide excess digits */
   white-space: nowrap; /*no additional rows */
 }

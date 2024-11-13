@@ -1,7 +1,12 @@
 import React from "react";
 import Button from "./Button";
 
-function Keyboard({ onButtonClick, isResultDisplayed }) {
+function Keyboard({
+  onButtonClick,
+  isResultDisplayed,
+  onMouseDownCE,
+  onMouseUpCE,
+}) {
   const numbers = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0"];
 
   return (
@@ -52,6 +57,8 @@ function Keyboard({ onButtonClick, isResultDisplayed }) {
       />
       <Button
         onClick={() => onButtonClick("CE")}
+        onMouseDown={onMouseDownCE}
+        onMouseUp={onMouseUpCE}
         key="btn-ce"
         label={isResultDisplayed ? "AC" : "CE"}
         className="button-ce"

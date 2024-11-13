@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Display from "./components/Display";
 import Keyboard from "./components/Keyboard";
 import Header from "./components/Header";
-import { evaluate, format } from "mathjs";
+import { evaluate } from "mathjs";
 
 function App() {
   const [displayValue, setDisplayValue] = useState("0");
@@ -10,6 +10,9 @@ function App() {
   const [previousExpression, setPreviousExpression] = useState("");
   const [currentNumber, setCurrentNumber] = useState("");
   const [isResultDisplayed, setIsResultDisplayed] = useState(false);
+
+  // reference to hold button timer
+  const holdTimer = useRef(null);
 
   const handleClick = (value) => {
     const operators = ["+", "-", "*", "/"];
@@ -162,6 +165,23 @@ function App() {
     setIsResultDisplayed(false);
   };
 
+  // when "CE" is being held for 0.8 second call this function
+  const handleCEHold = () => {
+    resetCalculator();
+  };
+
+  // "CE" button down handler
+  const handleMouseDownCE = () => {
+    holdTimer.current = setTimeout(handleCEHold, 800);
+  };
+
+  // "CE" button release handler
+  const handleMouseUpCE = () => {
+    if (holdTimer.current) {
+      clearTimeout(holdTimer.current);
+    }
+  };
+
   // Replace "*" with "x" and replace "/" with "÷" on display
   const formatDisplayValue = (value) => {
     return value.replace(/\*/g, "×").replace(/\//g, "÷");
@@ -179,6 +199,8 @@ function App() {
           <Keyboard
             onButtonClick={handleClick}
             isResultDisplayed={isResultDisplayed}
+            onMouseDownCE={handleMouseDownCE}
+            onMouseUpCE={handleMouseUpCE}
           />
         </div>
       </div>

@@ -2,8 +2,10 @@
 
 This project is a calculator application built with React. It replicates the functionality of the Google calculator, featuring basic arithmetic operations, input validation, and a user-friendly interface.
 
+
 ## 🌐 Online version
 [👉 Try the Calculator](https://oleknap-dev.github.io/react-calculator/)
+
 
 ## ✨ Features
 - Basic arithmetic operations: Supports addition, subtraction, multiplication, and division.
@@ -15,6 +17,7 @@ This project is a calculator application built with React. It replicates the fun
 - Intelligent "CE" button behavior: Acts as a delete button for single inputs, resets the calculator on long press (0.8 seconds), or when the input is empty.
 - Expression evaluation: Uses `math.js` for accurate mathematical calculations.
 - Responsive design: Adapts seamlessly to both desktop and mobile devices.
+
 
 ## 🛠️ Technologies Used
 - **React 18.3.1** – Frontend library for building interactive UIs.

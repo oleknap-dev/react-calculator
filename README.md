@@ -14,10 +14,8 @@ This project is a calculator application built with React. It replicates the fun
 - Adaptive input handling: Adjusts the initial "0" based on user input (digit, decimal point, or minus sign).
 - Operator management: Automatically replaces the last operator if a new one is pressed (e.g., `5 + -` becomes `5 -`) and inserts multiplication after `%` when followed by a number.
 - Error handling: Displays "Error" for invalid expressions (e.g., `5 + (`).
-- Intelligent "CE" button behavior: Acts as a delete button for single inputs, resets the calculator on long press (0.8 seconds), or when the input is empty.
+- Intelligent "CE" button behavior: Acts as a delete button for single inputs, resets the calculator on long press (0.8 seconds).
 - Expression evaluation: Uses `math.js` for accurate mathematical calculations.
-- Responsive design: Adapts seamlessly to both desktop and mobile devices.
-
 
 ## 🛠️ Technologies Used
 - **React 18.3.1** – Frontend library for building interactive UIs.
